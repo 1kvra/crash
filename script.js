@@ -80,7 +80,7 @@ function runMultiplier() {
   let delay;
   if (multiplier < 1.1) delay = 200;
   else if (multiplier < 2.5) delay = 100;
-  else delay = 20;
+  else delay = 80;
 
   setTimeout(() => {
     multiplier += 0.01;
@@ -132,3 +132,4 @@ function flash(color) {
   document.body.style.background = color;
   setTimeout(() => document.body.style.background = "#121212", 150);
 }
+
