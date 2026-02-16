@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crash Game Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Crash Game Simulator</h1>
+
+  <div class="panel">
+    <input id="cashIn" type="number" placeholder="Cash In">
+    <button onclick="cashIn()">Cash In</button>
+
+    <input id="betAmount" type="number" placeholder="Bet Amount">
+    <button onclick="placeBet()">Place Bet</button>
+
+    <p id="balance">Balance: 0</p>
+    <p id="timer">Next round in: 7</p>
+  </div>
+
+  <div id="multiplier">x1.00</div>
+
+  <button id="cashOutBtn" onclick="cashOut()" disabled>Cash Out</button>
+
+  <div class="log" id="log"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
