@@ -77,10 +77,18 @@ function startRound() {
 function runMultiplier() {
   if (!running) return;
 
-  let delay;
-  if (multiplier < 1.1) delay = 200;
-  else if (multiplier < 2.5) delay = 100;
-  else delay = 80;
+  // Smooth acceleration with cap
+  const maxSpeedMultiplier = 2.5;
+  const baseDelay = 220;   // slow start
+  const minDelay = 20;     // max speed
+  const acceleration = 140;
+
+  const effectiveMultiplier = Math.min(multiplier, maxSpeedMultiplier);
+
+  let delay = baseDelay - (effectiveMultiplier - 1) * acceleration;
+
+  // Clamp delay
+  delay = Math.max(delay, minDelay);
 
   setTimeout(() => {
     multiplier += 0.01;
@@ -132,4 +140,5 @@ function flash(color) {
   document.body.style.background = color;
   setTimeout(() => document.body.style.background = "#121212", 150);
 }
+
 
