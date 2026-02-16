@@ -80,8 +80,8 @@ function runMultiplier() {
   // Smooth acceleration with cap
   const maxSpeedMultiplier = 2.5;
   const baseDelay = 220;   // slow start
-  const minDelay = 20;     // max speed
-  const acceleration = 140;
+  const minDelay = 60;     // max speed
+  const acceleration = 120;
 
   const effectiveMultiplier = Math.min(multiplier, maxSpeedMultiplier);
 
@@ -140,5 +140,6 @@ function flash(color) {
   document.body.style.background = color;
   setTimeout(() => document.body.style.background = "#121212", 150);
 }
+
 
 
